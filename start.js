@@ -1,14 +1,14 @@
-﻿const { exec } = require("child_process");
+const { exec } = require("child_process");
 
 const port = process.env.PORT || 3000;
-exec(
-px serve dist --listen 0.0.0.0:, (err, stdout, stderr) => {
+
+exec(\
+px serve dist --listen \\, (err, stdout, stderr) => {
   if (err) {
-    console.error(Error starting server: );
+    console.error("? Error starting server:", err);
     return;
   }
-  if (stderr) {
-    console.error(stderr);
-  }
+  console.log("? Server started:");
   console.log(stdout);
+  console.error(stderr);
 });
